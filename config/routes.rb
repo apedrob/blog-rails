@@ -4,6 +4,12 @@ Rails.application.routes.draw do
   resources :articles do
   	resources :comments
   end
+
+  namespace :api do
+    resources :articles do
+      resources :comments
+    end
+  end
   
   
   root 'welcome#index'
